@@ -1,6 +1,22 @@
-h1 {
-  --uno: text-xl bg-black;
+//
+:is(.UrlBar-AddressField, .UrlBar-SearchField),
+:is(.UrlBar-AddressField, .UrlBar-SearchField):focus {
+  border: transparent;
+  background: transparent;
+}
+
+//panel
+select:not([multiple]):not([size]),
+input[type="date"],
+.dateInput {
+  border: transparent;
+  background: transparent;
+}
+
+//bookmark
+.bookmark-bar {
+  background: transparent;
   button {
-    --uno: bg-black;
+    border: transparent;
   }
 }

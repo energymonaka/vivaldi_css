@@ -14,4 +14,8 @@ export default defineConfig({
   server: {
     open: "index.html",
   },
+  build: {
+    outDir: "../dist",
+    assetsDir: "./assets",
+  },
 });
