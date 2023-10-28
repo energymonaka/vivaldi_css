@@ -1,0 +1,6 @@
+h1 {
+  --uno: text-xl bg-black;
+  button {
+    --uno: bg-black;
+  }
+}
