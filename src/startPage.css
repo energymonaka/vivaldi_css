@@ -1,0 +1,29 @@
+body > div#app > div#browser {
+  .SpeedDialView-Head {
+    margin: 450px auto 32px;
+  }
+  .color-behind-tabs-on .SearchField:focus-within,
+  .color-behind-tabs-on .UrlBar-AddressField:focus-within {
+    outline: none;
+  }
+  .sdwrapper .iconmenu-container.SearchField {
+    padding: 8px;
+  }
+  .tracker-warning,
+  .SpeedDialView-SearchField,
+  .SpeedDial-Blocked-Counter {
+    border-radius: 40px;
+  }
+
+  /* settings button */
+
+  .SpeedDialView-Settings-Button {
+    svg {
+      fill: transparent;
+      transition: all 0.5s ease 0s !important;
+    }
+    &:hover svg {
+      fill: var(--colorFg);
+    }
+  }
+}

@@ -1,59 +1,72 @@
-#browser {
+body > div#app > div#browser {
   /* addColor */
   --CCTransparent: var(--CCGrayAlpha);
   --CCGrayAlpha: #2e2f375d;
   --CCBgBlur: 6;
-  /* replaceColor */
-  --colorBorder: transparent !important;
-}
-/* toolBar */
-:is(.UrlBar-AddressField, .UrlBar-SearchField),
-:is(.UrlBar-AddressField, .UrlBar-SearchField):focus {
-  background-color: var(--CCTransparent);
-  border: var(--CCTransparent);
-}
-.mainbar {
-  background-color: var(--CCTransparent);
-  backdrop-filter: var(--CCBgBlur);
-}
-/* panel */
-select:not([multiple]):not([size]),
-input[type="date"],
-.dateInput {
-  background-color: var(--CCTransparent);
-  border: var(--CCTransparent);
-}
-#panels-container {
-  background-color: var(--CCTransparent);
-}
-/* button */
-.toolbar-default .button-toolbar {
-  button:is(:disabled, :enabled) {
-    background-color: var(--CCGrayAlpha) !important;
-    background-image: none !important;
+
+  --colorBorder: var(--CCGrayAlpha) !important;
+
+  /* toolBar */
+  :is(.UrlBar-AddressField, .UrlBar-SearchField),
+  :is(.UrlBar-AddressField, .UrlBar-SearchField):is(:focus, :hover) {
+    background-color: var(--CCTransparent);
+    border-color: var(--colorBorder);
   }
-}
-/* bookmark */
-.bookmark-bar,
-.bookmark-bar button {
-  background-color: var(--CCTransparent) !important;
-  border: var(--CCTransparent) !important;
-}
+  .mainbar {
+    background-color: var(--CCTransparent);
+    backdrop-filter: var(--CCBgBlur);
+  }
+  /* panel */
+  select:not([multiple]):not([size]),
+  input[type="date"],
+  .dateInput {
+    background-color: var(--CCTransparent);
+    border-color: var(--colorBorder);
+  }
 
-/* tabBar */
-:is(.tabs-left, .tabs-right)
-  .button-toolbar.workspace-popup.tabbar-workspace-button,
-#tabs-tabbar-container {
-  background-color: var(--CCTransparent) !important;
-  backdrop-filter: var(--CCBgBlur) !important;
-}
+  #panels-container {
+    background-color: var(--CCTransparent);
+  }
+  /* button */
+  .toolbar-default .button-toolbar {
+    button:is(:disabled, :enabled) {
+      background-color: var(--CCGrayAlpha);
+      background-image: none;
+    }
+  }
+  /* bookmark */
+  .bookmark-bar {
+    background-color: var(--CCTransparent);
+    border-color: var(--colorBorder);
+    * {
+      background-color: transparent;
+    }
+  }
 
-/* others */
-.tab-position .tab {
-  background-color: transparent !important;
-}
+  /* tabBar */
 
-/* active */
-.tab-position .tab.active {
-  background-color: var(--CCGrayAlpha) !important;
+  :not(.transparent-tabbar) #tabs-tabbar-container {
+    background-color: var(--CCTransparent);
+    backdrop-filter: var(--CCBgBlur);
+  }
+
+  .tabbar-wrapper
+    > .tabbar-wrapper
+    .button-toolbar.workspace-popup.tabbar-workspace-button {
+    background-color: var(--CCTransparent);
+  }
+
+  /* others */
+  .tab-position .tab {
+    background-color: transparent;
+  }
+
+  /* active */
+  .tab-position .tab.active {
+    background-color: var(--CCGrayAlpha);
+  }
+  /* hover */
+  .color-behind-tabs-on button:is(:focus, :hover) {
+    background-color: var(--CCGrayAlpha) !important;
+  }
 }
